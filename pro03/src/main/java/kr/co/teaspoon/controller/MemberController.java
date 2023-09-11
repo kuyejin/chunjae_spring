@@ -1,5 +1,6 @@
 package kr.co.teaspoon.controller;
 
+import kr.co.teaspoon.dao.MemberDAO;
 import kr.co.teaspoon.dto.Board;
 import kr.co.teaspoon.dto.Member;
 import kr.co.teaspoon.service.MemberService;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -22,17 +24,49 @@ public class MemberController {
     @Autowired
     HttpSession session;
 
-    /* 회원가입 */
-    @RequestMapping(value = "insert.do", method = RequestMethod.POST)
-    public String memberWrite(Member member, Model model) throws Exception{
-        return "redirect:/";
-    }
-
-
+    /*로그인 폼 이동*/
     @GetMapping("login.do")
     public String memberLoginForm(Model model) throws Exception{
         return "/member/loginForm";
     }
+
+    /*로그인 성공 후*/
+/*    @GetMapping("login.do")
+    public String memberLogin(Model model) throws Exception{
+        return "/";
+    }*/
+
+    /* 회원가입 */
+    @RequestMapping(value = "insert.do", method = RequestMethod.POST)
+    public String memberWrite(HttpServletRequest request, Model model) throws Exception{
+        String id = request.getParameter("id");
+        String pw = request.getParameter("pw");
+        String msg = "로그인 페이지";
+
+        Member mem = new Member();
+        //boolean pass = mem.login(id, pw);
+
+        HttpSession session = request.getSession();
+        return "redirect:/";
+    }
+
+    //회원 가입 - 약관 동의 페이지 로딩
+    @GetMapping("agree.do")
+    public String getAgree(Model model) throws Exception {
+        return "/member/agree";
+    }
+    //회원 가입 - 회원가입폼 페이지 로딩
+    @GetMapping("join.do")
+    public String getJoin(Model model) throws Exception {
+        return "/member/memberInsert";
+    }
+    //회원 가입 - Ajax로 아이디 중복 체크
+    @RequestMapping(value="idCheck.do", method=RequestMethod.POST)
+    public void idCheck(HttpServletResponse response, HttpServletRequest request, Model model) throws Exception {
+
+    }
+
+
 
 
     /*관리자가 볼 수 있는 회원 목록*/
