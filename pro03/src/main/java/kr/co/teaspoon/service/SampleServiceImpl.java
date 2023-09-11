@@ -1,7 +1,10 @@
 package kr.co.teaspoon.service;
 
 import kr.co.teaspoon.dao.SampleDAO;
+import kr.co.teaspoon.dao.SampleDAOImpl;
 import kr.co.teaspoon.dto.Sample;
+
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,10 +12,10 @@ import java.util.List;
 
 @Service
 public class SampleServiceImpl implements SampleService{
+
     @Autowired
     private SampleDAO sampleDAO;
 
-    @Override
     public List<Sample> sampleList() throws Exception {
         return sampleDAO.sampleList();
     }
@@ -20,11 +23,6 @@ public class SampleServiceImpl implements SampleService{
     @Override
     public Sample sampleDetail(int no) throws Exception {
         return sampleDAO.sampleDetail(no);
-    }
-
-    @Override
-    public int sampleCount() throws Exception {
-        return sampleDAO.sampleCount();
     }
 
     @Override
@@ -41,6 +39,4 @@ public class SampleServiceImpl implements SampleService{
     public void sampleDelete(int no) throws Exception {
         sampleDAO.sampleDelete(no);
     }
-
-
 }

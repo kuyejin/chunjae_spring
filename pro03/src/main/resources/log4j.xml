@@ -29,6 +29,14 @@
         <level value="info" />
     </logger>
 
+    <logger name="kr.co.teaspoon.test">
+        <level value="info" />
+    </logger>
+
+    <logger name="kr.co.teaspoon">
+        <level value="info" />
+    </logger>
+
     <logger name="org.springframework.core">
         <level value="info" />
     </logger>
@@ -47,10 +55,10 @@
         <appender-ref ref="console"/>
     </root>
 </log4j:configuration>
-        <!--
-            콘솔 창에 띄워 지는 내용의 레벨 : level
-            TRACE > DEBUG > INFO > WARN > ERROR > FATAL
-        -->
+<!--
+    콘솔 창에 띄워 지는 내용의 레벨 : level
+    TRACE > DEBUG > INFO > WARN > ERROR > FATAL
+-->
         <!-- FATAL : 심각한 시스템 이상 내용 표시 -->
         <!-- ERROR : 요청에 대한 문제 발생시 표시 -->
         <!-- WARN : 처리는 가능하지만 경고성 메시지 발신 표시 -->
