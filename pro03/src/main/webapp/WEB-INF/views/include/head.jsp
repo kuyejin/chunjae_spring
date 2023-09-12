@@ -5,7 +5,7 @@
 <%-- 이미지 경로 바꾸면 오류 생기므로 일단 이렇게 두자 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<c:set var="path0" value="/pro03_war " />
+<c:set var="path0" value="/pro03_war" />
 
 <%--메타포--%>
 <%--기타 설정--%>
@@ -55,7 +55,7 @@
 
 <!-- 제이쿼리 -->
 <script src="${path0}/resources/js/jquery-1.10.0.js"></script>
-<%--<script src="${path0}/resources/js/jquery-3.7.1.js"></script>--%>
+<script src="${path0}/resources/js/jquery-3.7.1.js"></script>
 
 <!-- 부트스트랩 -->
 <%--

@@ -9,7 +9,7 @@ import java.util.Locale;
 
 @Controller
 public class HomeController {
-    //http:localhost:8081/pro03_war => / => /WEB-INF/views/index.jsp
+    //http:localhost:8081/pro03_war => / => /WEB-INF/views/index22.jsp
 
     @RequestMapping("/")
     public String home(Locale locale, Model model) {

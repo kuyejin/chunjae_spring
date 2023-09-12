@@ -21,7 +21,7 @@
     <div class="hero is-fullheight">
         <div class="hero-body is-justify-content-center is-align-items-center">
 
-            <form action="${path}/LoginPro.do" id="login_frm" class="frm" method="post">
+            <form action="${path1}/member/loginpro.do" id="login_frm" class="frm" method="post">
                 <div class="columns is-flex is-flex-direction-column box">
                     <div class="column">
                         <label for="id">ID</label>

@@ -49,9 +49,20 @@
 <link rel="icon" href="./img/logo_64.png" sizes="64x64">
 
 <%-- bulma --%>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+<%--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 <link rel="stylesheet" href="${path1}/resources/css/bulma.css">
-<link rel="stylesheet" href="${path1}/resources/css/normalize.css">
+<link rel="stylesheet" href="${path1}/resources/css/normalize.css">--%>
+
+<!-- bulma templet-->
+<link rel="stylesheet" href="${path1}/resources/theme/plugins/bulma/bulma.min.css">
+<!-- slick slider -->
+<link rel="stylesheet" href="${path1}/resources/theme/plugins/slick/slick.css">
+<!-- themefy-icon -->
+<link rel="stylesheet" href="${path1}/resources/theme/plugins/themify-icons/themify-icons.css">
+
+<!-- Main Stylesheet -->
+<link href="${path1}/resources/theme/css/style.css" rel="stylesheet">
+
 
 <!-- 제이쿼리 -->
 <script src="${path1}/resources/js/jquery-1.10.0.js"></script>
@@ -73,7 +84,7 @@
 </script>
 
 <%--헤더--%>
-<header id="hd" class="container is-fullhd">
+<%--<header id="hd" class="container is-fullhd">
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
@@ -123,7 +134,7 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <%-- 로그인 했을 때 --%>
+                    &lt;%&ndash; 로그인 했을 때 &ndash;%&gt;
 
                     <c:if test="${!(sid.equals('admin')) && !empty sid}">
                         <p>${sid } 님</p>
@@ -135,7 +146,7 @@
                         </a>
                     </c:if>
 
-                    <%--관리자 일때--%>
+                    &lt;%&ndash;관리자 일때&ndash;%&gt;
                         <p>${sid } 님</p>
                     <c:if test="${sid.equals('admin') && !empty sid}">
                         <a href="${path1 }/member/adminpage.do" class="button is-primary">
@@ -150,7 +161,7 @@
                     </c:if>
 
 
-                    <%-- 로그인 안했을 때--%>
+                    &lt;%&ndash; 로그인 안했을 때&ndash;%&gt;
                     <c:if test="${empty sid}">
                         <a href="${path1 }/member/term.do" class="button is-primary">
                             <strong>Sign up</strong>
@@ -161,13 +172,59 @@
                     </c:if>
 
 
-                   <%-- <a href="${path1 }/member/list.do" class="button is-primary">
+                   &lt;%&ndash; <a href="${path1 }/member/list.do" class="button is-primary">
                         <strong>memberList</strong>
-                    </a>--%>
+                    </a>&ndash;%&gt;
 
                 </div>
             </div>
         </div>
     </div>
 </nav>
+</header>--%>
+
+
+<header>
+    <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <img src="images/logo.png" width="112" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navigation">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navigation" class="navbar-menu">
+            <div class="navbar-end">
+                <a href="${path1}/board/list.do" class="navbar-item">게시판1</a>
+                <a href="${path1}/board/list.do" class="navbar-item">게시판2</a>
+                <a href="${path1}/board/list.do" class="navbar-item">blog</a>
+                <%-- 로그인 안했을 때--%>
+                <c:if test="${empty sid}">
+                    <a href="${path1 }/member/login.do" class="navbar-item">로그인</a>
+                    <a href="${path1 }/member/term.do" class="navbar-item">회원가입</a>
+                </c:if>
+
+
+                <%-- 회원으로 로그인 했을 때 --%>
+                <c:if test="${!(sid.equals('admin')) && !empty sid}">
+                    <%--<p>${sid } 님  </p>--%>
+                    <a href="${path1 }/member/mypage.do" class="navbar-item">mypage </a>
+                    <a href="${path1 }/member/logout.do" class="navbar-item">logout </a>
+                </c:if>
+
+                <%--관리자 일때--%>
+                <c:if test="${sid.equals('admin') && !empty sid}">
+                    <%--<p>${sid } 님</p>--%>
+                    <a href="${path1 }/member/adminpage.do" class="navbar-item">관리자페이지</a>
+                    <a href="${path1 }/member/logout.do" class="navbar-item"> logout</a>
+                </c:if>
+
+            </div>
+        </div>
+    </nav>
 </header>
