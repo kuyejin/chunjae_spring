@@ -28,7 +28,7 @@
 
 
 	<!--sql 태그-->
-	<sql id="criteria">
+	<!--<sql id="criteria">
 		<where>
 			<trim prefixOverrides="OR">
 				<foreach item="type" collection="typeArr">
@@ -57,7 +57,7 @@
 		<![CDATA[
         ORDER BY regdate DESC LIMIT ((#{pageNum} - 1) * #{amount}), #{amount}
         ]]>
-	</select>
+	</select>-->
 
 
 </mapper>

@@ -25,6 +25,7 @@
     <resources mapping="/util/**" location="/WEB-INF/views/util" />
     <resources mapping="/sample/**" location="/WEB-INF/views/sample" />
     <resources mapping="/sample2/**" location="/WEB-INF/views/sample2" />
+    <resources mapping="/test/**" location="/WEB-INF/views/test" />
 
     <!-- 컨트롤러에서 던진 URL : /notice/noticeList -->
     <!-- 실제 존재하는 URL : /WEB-INF/views/notice/noticeList.jsp -->
@@ -42,8 +43,10 @@
 
     <!-- 멀티파트 업로드 디렉토리 지정 -->
     <beans:bean id="uploadPath" class="java.lang.String">
-        <beans:constructor-arg value="D:\kuyejin\spring\pro03\src\main\webapp\resources\upload" />
+        <beans:constructor-arg value="D:\kim\spring1\pro31\src\main\webapp\resources\upload" />
     </beans:bean>
+
+
 
     <!-- 기본 메인 패키지 및 컨트롤러 패키지 설정 -->
     <context:component-scan base-package="kr.co.teaspoon.controller" />

@@ -48,6 +48,7 @@ public class MemberController {
             session.setAttribute("member", member);
             session.setAttribute("sid", member.getId());
             rttr.addFlashAttribute("msg", "로그인 성공");
+           //return "redirect: " + referer;
             return "redirect:/";
         } else {
             session.setAttribute("member", null);

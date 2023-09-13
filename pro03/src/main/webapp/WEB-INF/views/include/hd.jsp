@@ -201,7 +201,7 @@
         <div id="navigation" class="navbar-menu">
             <div class="navbar-end">
                 <a href="${path1}/board/list.do" class="navbar-item">게시판1</a>
-                <a href="${path1}/board/list.do" class="navbar-item">게시판2</a>
+                <a href="${path1}/free/list.do" class="navbar-item">게시판2</a>
                 <a href="${path1}/board/list.do" class="navbar-item">blog</a>
                 <%-- 로그인 안했을 때--%>
                 <c:if test="${empty sid}">

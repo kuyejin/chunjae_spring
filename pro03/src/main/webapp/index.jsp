@@ -62,8 +62,8 @@
 
         <div id="navigation" class="navbar-menu">
             <div class="navbar-end">
-                <a href="${path1}/board/list.do" class="navbar-item">게시판1</a>
-                <a href="${path1}/board/list.do" class="navbar-item">게시판2</a>
+                <a href="${path1}/board/list.do" class="navbar-item">일반게시판</a>
+                <a href="${path1}/free/list.do" class="navbar-item">자유게시판</a>
                 <a href="${path1}/board/list.do" class="navbar-item">blog</a>
                 <%-- 로그인 안했을 때--%>
                 <c:if test="${empty sid}">
@@ -74,14 +74,14 @@
 
                 <%-- 회원으로 로그인 했을 때 --%>
                 <c:if test="${!(sid.equals('admin')) && !empty sid}">
-                    <p>${sid } 님  </p>
+                    <%--<p>${sid } 님  </p>--%>
                     <a href="${path1 }/member/mypage.do" class="navbar-item">mypage </a>
                     <a href="${path1 }/member/logout.do" class="navbar-item">logout </a>
                 </c:if>
 
                 <%--관리자 일때--%>
-                <p>${sid } 님</p>
                 <c:if test="${sid.equals('admin') && !empty sid}">
+                    <%--<p>${sid } 님</p>--%>
                     <a href="${path1 }/member/adminpage.do" class="navbar-item">관리자페이지</a>
                     <a href="${path1 }/member/logout.do" class="navbar-item"> logout</a>
                 </c:if>
