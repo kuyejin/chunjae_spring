@@ -19,6 +19,7 @@
 <body>
 <div class="container is-fullhd">
 	<!-- 헤더 부분 인클루드 -->
+
 	<jsp:include page="../include/hd.jsp"></jsp:include>
 	<figure class="visual" id="vs1">
 		<ul class="imgbox">

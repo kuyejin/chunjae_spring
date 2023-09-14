@@ -40,16 +40,20 @@ public class MemberController {
 
     //Ajax를 이용하는 로그인 방법
     @RequestMapping(value="loginCheck.do", method = RequestMethod.POST)
-    public String memberLoginCtrl(Member mdto, RedirectAttributes rttr) throws Exception {
-        session.getAttribute("member");
+    public String memberLoginCtrl(@RequestParam String id, @RequestParam String pw, HttpServletRequest request, RedirectAttributes rttr) throws Exception {
+        //session.getAttribute("member");
+        Member mdto = new Member();
+        mdto.setId(id);
+        mdto.setPw(pw);
         Member member = memberService.loginAjax(mdto);
         boolean mat = pwEncoder.matches(mdto.getPw(), member.getPw());
         if(member!=null && mat) {
             session.setAttribute("member", member);
             session.setAttribute("sid", member.getId());
             rttr.addFlashAttribute("msg", "로그인 성공");
-           //return "redirect: " + referer;
-            return "redirect:/";
+            String referer = request.getHeader("Referer");
+            return "redirect:"+referer;
+            //return "redirect:/";
         } else {
             session.setAttribute("member", null);
             rttr.addFlashAttribute("msg", "로그인 실패");
@@ -169,10 +173,11 @@ public class MemberController {
 
 
     /*회원 삭제*/
-    @GetMapping("delete.do")
-    public String memberelete(HttpServletRequest request, Model model) throws Exception {
-        String id = request.getParameter("id");
+    //회원 탈퇴
+    @RequestMapping(value="delete.do", method = RequestMethod.GET)
+    public String memberDelete(@RequestParam String id, Model model, HttpSession session) throws Exception {
         memberService.memberDelete(id);
+        session.invalidate();
         return "redirect:list.do";
     }
 

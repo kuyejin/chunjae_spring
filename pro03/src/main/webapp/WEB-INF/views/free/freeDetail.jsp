@@ -37,6 +37,15 @@
 					<td>${dto.id }</td>
 				</tr>
 				<tr>
+					<th style="background-color:#dcdcdc">작성일시</th>
+					<td>${dto.regdate }</td>
+				</tr>
+				<tr>
+					<th style="background-color:#dcdcdc">조회수</th>
+					<td>${dto.visited }</td>
+				</tr>
+
+				<tr>
 					<th style="background-color:#dcdcdc">글 제목</th>
 					<td>${dto.title }</td>
 				</tr>
@@ -45,14 +54,7 @@
 					<td><p>${dto.content }</p></td>
 				</tr>
 
-				<tr>
-					<th style="background-color:#dcdcdc">작성일시</th>
-					<td>${dto.regdate }</td>
-				</tr>
-				<tr>
-					<th style="background-color:#dcdcdc">읽은 횟수</th>
-					<td>${dto.visited }</td>
-				</tr>
+
 				</tbody>
 			</table>
 			<div class="button-group">

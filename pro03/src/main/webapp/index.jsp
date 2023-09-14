@@ -49,7 +49,7 @@
 <header>
     <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="index.html">
+            <a class="navbar-item" href="${path1}/">
                 <img src="images/logo.png" width="112" height="28">
             </a>
 
@@ -92,49 +92,28 @@
 </header>
 
 <!-- hero area -->
-<section class="hero-area has-background-primary" id="parallax">
-    <div class="container">
+<section class="hero-area has-background-primary" id="parallax" >
+
+    <%--<div class="container">--%>
         <div class="columns">
-            <div class="column is-11-desktop is-offset-1-desktop">
+            <img src="${path1 }/resources/images/new_main.png">
+
+            <%--<div class="column is-11-desktop is-offset-1-desktop">
                 <h1 class="has-text-white font-tertiary"> test <br> test <br> test</h1>
             </div>
+
+            <!-- social icon -->
+            <div class="list list-hero-social">
+                <a class="list-item has-text-white" href="#"><i class="ti-facebook"></i></a>
+                <a class="list-item has-text-white" href="#"><i class="ti-instagram"></i></a>
+                <a class="list-item has-text-white" href="#"><i class="ti-dribbble"></i></a>
+                <a class="list-item has-text-white" href="#"><i class="ti-twitter"></i></a>
+            </div>
+            <!-- /social icon -->--%>
         </div>
-    </div>
-<%--    <div class="layer-bg is-full">
-        <img class="image is-full" src="images/illustrations/leaf-bg.png" alt="bg-shape">
-    </div>
-    <div class="layer" id="l2">
-        <img src="images/illustrations/dots-cyan.png" alt="bg-shape">
-    </div>
-    <div class="layer" id="l3">
-        <img src="images/illustrations/leaf-orange.png" alt="bg-shape">
-    </div>
-    <div class="layer" id="l4">
-        <img src="images/illustrations/dots-orange.png" alt="bg-shape">
-    </div>
-    <div class="layer" id="l5">
-        <img src="images/illustrations/leaf-yellow.png" alt="bg-shape">
-    </div>
-    <div class="layer" id="l6">
-        <img src="images/illustrations/leaf-cyan.png" alt="bg-shape">
-    </div>
-    <div class="layer" id="l7">
-        <img src="images/illustrations/dots-group-orange.png" alt="bg-shape">
-    </div>
-    <div class="layer" id="l8">
-        <img src="images/illustrations/leaf-pink-round.png" alt="bg-shape">
-    </div>
-    <div class="layer" id="l9">
-        <img src="images/illustrations/leaf-cyan-2.png" alt="bg-shape">
-    </div>--%>
-    <!-- social icon -->
-    <div class="list list-hero-social">
-        <a class="list-item has-text-white" href="#"><i class="ti-facebook"></i></a>
-        <a class="list-item has-text-white" href="#"><i class="ti-instagram"></i></a>
-        <a class="list-item has-text-white" href="#"><i class="ti-dribbble"></i></a>
-        <a class="list-item has-text-white" href="#"><i class="ti-twitter"></i></a>
-    </div>
-    <!-- /social icon -->
+    <%--</div>--%>
+
+
 </section>
 <!-- /hero area -->
 

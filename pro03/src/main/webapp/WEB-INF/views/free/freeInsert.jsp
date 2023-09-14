@@ -30,6 +30,7 @@
 			<form action="${path1 }/free/insert.do" method="post" enctype="multipart/form-data">
 				<table id="table1">
 					<tbody>
+						<input type="hidden" name="id" value="${sid }" placeholder="no hidden">
 					<tr>
 						<th style="background-color:#dcdcdc">글 제목</th>
 						<td>

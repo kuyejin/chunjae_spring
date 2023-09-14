@@ -15,8 +15,8 @@
 	<jsp:include page="../include/head.jsp"></jsp:include>
 </head>
 <body>
-<header id="header">
-	<!-- 헤더 부분 인클루드 -->
+<!-- 헤더 부분 인클루드 -->
+<header id="hd" class="container is-fullhd">
 	<jsp:include page="../include/hd.jsp"></jsp:include>
 </header>
 
@@ -53,8 +53,8 @@
 		</div>
 	</div>
 </div>
+<!-- 푸터 부분 인클루드 -->
 <footer id="footer" class="footer-nav row expanded collapse">
-	<!-- 푸터 부분 인클루드 -->
 	<jsp:include page="../include/ft.jsp"></jsp:include>
 </footer>
 </body>
