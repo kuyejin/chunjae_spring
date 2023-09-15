@@ -101,14 +101,28 @@ public class MemberController {
     /* ============ 회원가입 ===================*/
 
     // 약관 동의 페이지 로딩
-    @GetMapping("term.do")
+/*    @GetMapping("term.do")
     public String getAgree(Model model) throws Exception {
         return "/member/agree";
+
+    }*/
+
+    @GetMapping("term.do")
+    public String getJoinTerm(Model model) throws Exception {
+        return "/member/memberInsertTerm";
     }
 
     //회원 가입 - 회원가입폼 페이지 로딩
-    @GetMapping("join.do")
+    /*@GetMapping("join.do")
     public String getJoin(Model model) throws Exception {
+        return "/member/memberInsert";
+    }*/
+
+    @PostMapping("join.do")
+    public String getJoin(HttpServletRequest request, Model model) throws Exception {
+
+        int auth = Integer.parseInt(request.getParameter("auth"));
+        model.addAttribute("auth",auth);
         return "/member/memberInsert";
     }
 

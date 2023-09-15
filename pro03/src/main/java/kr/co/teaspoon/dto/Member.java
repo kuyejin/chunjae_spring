@@ -20,4 +20,5 @@ public class Member {
     private String birth;
     private int pt;
     private int visited;
+    private int auth;
 }

@@ -31,7 +31,7 @@
 
 	<!-- 회원 가입 -->
 	<insert id="memberInsert">
-		insert into member values (#{id}, #{pw}, #{name}, #{email}, #{tel}, #{addr1}, #{addr2}, #{postcode}, default, #{birth}, default, default)
+		insert into member values (#{id}, #{pw}, #{name}, #{email}, #{tel}, #{addr1}, #{addr2}, #{postcode}, default, #{birth}, default, default , #{auth})
 	</insert>
 	<!-- 회원 탈퇴 -->
 	<delete id="memberDelete">

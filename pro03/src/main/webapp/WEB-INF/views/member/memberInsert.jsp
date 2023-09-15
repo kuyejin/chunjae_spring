@@ -52,6 +52,7 @@
                                 <c:if test="${not empty qid }">
                                     <p id="msg" style="padding-left:0.5rem">아이디 중복 체크후 수정하였습니다.</p>
                                 </c:if>
+                                <input type="hidden" name="auth" id="auth" value="${auth}" readonly="">
                             </td>
                         </tr>
                         <tr>
